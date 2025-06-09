@@ -19,7 +19,9 @@ This project is a personal portfolio created with HTML and CSS. The goal is to s
 
 ## How to view the project
 1. Clone the repository or download it
-2. Open the `index.html` file in your favorite browser
+2. When you download the repository you should be left with an Assets folder, an index.html file and another styles.css file.
+3. Open the `index.html` file in your favorite browser
+4. The mockup.png file is for preview purposes only in this README file; that is, you should not download it.
 
 ## Credits
 * Created by Daniel Ariza (Alex D Walker)
