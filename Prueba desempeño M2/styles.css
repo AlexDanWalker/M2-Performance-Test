@@ -1,0 +1,430 @@
+/* ========== CSS VARIABLES ========== */
+/* Defining CSS variables to maintain consistency in colors, fonts, borders, and transitions */
+:root {
+--primary-color: #ffa600f4; /* Primary color used for prominent elements */
+--primary-hover-color: #ff2600; /* Color for hovering over primary elements */
+--background-color: #000000; /* Overall site background color */
+--text-color: #ffffff; /* Primary text color */
+--secondary-color: #ffffff; /* Color for secondary or less prominent text */
+--footer-background-color: #b41b1b; /* Background color for the footer */
+
+--primary-font: 'Segoe UI', Tahoma, Verdana, sans-serif; /* Primary body font */
+--secondary-font: 'Georgia', serif; /* Secondary font used for prominent titles */
+
+--border-radius: 10px; /* Edge radius for rounded corners */
+--short-transition: 0.3s ease-in-out; /* Transition duration and type for visual effects */
+}
+
+/* ========== BASIC RESET ========== */
+/* Applying box-sizing to include padding and borders within the defined width and height */
+/* Additionally, default margins and padding for common elements are removed to avoid inconsistencies */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none; /* Remove default list styles for customization */
+}
+
+/* ========== BODY & TYPOGRAPHY ========== */
+/* Basic styles for the body of the page, including typography, colors, and flexible layout */
+body {
+  font-family: var(--primary-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;            /* Better readability with proper line spacing */
+  min-height: 100vh;           /* Ensures that the body fills at least the full height of the window */
+  display: flex;               /* Flexbox to arrange content vertically */
+  flex-direction: column;
+  background-image: url("Assets/OP.jpg");
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+/* Header style with primary background, padding, and shadow for depth */
+header {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+/* Flexible container for the navigation bar, centering and distribution between elements */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Logo with prominent typographic weight and adjusted size */
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  user-select: none; /* Prevents logo text from being accidentally selected */
+}
+
+/* Hidden checkbox that controls the visibility of the hamburger menu on mobile */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger button hidden by default, with column layout and defined size */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Make sure it is above other elements */
+}
+
+/* Each hamburger icon bar with size, color and transition for visual effects */
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: background-color var(--short-transition);
+}
+
+/* Main menu with flexible layout and link spacing */
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Menu links with white color, no underline, and transition color */
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color var(--short-transition);
+}
+
+/* Change color and remove outline for focus and hover */
+.menu a:hover,
+.menu a:focus {
+  color: var(--primary-hover-color);
+  outline: none;
+}
+
+/* ========== MAIN & SECTIONS ========== */
+/* Main container with maximum width and horizontal centering, with top margin */
+main {
+  flex-grow: 1; /* Allows the main to grow to fill available space */
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Separation between main sections */
+.section {
+  margin-bottom: 3rem;
+}
+
+/* --- HERO --- */
+/* Container with centered text and relative positioning for child elements */
+#hero {
+  position: relative;
+  text-align: center;
+}
+
+/* Responsive main hero image with rounded edges and proper cropping */
+#hero img {
+  width: 20%;
+  height: auto;
+  border-radius: var(--border-radius);
+  max-height: 400px;
+  object-fit: cover; /* Adjusts the image to cover the area without distorting */
+}
+
+/* Text below the image with a top margin for spacing */
+.hero-text {
+  margin-top: 1rem;
+}
+
+/* Main title with secondary font, large size, and primary color */
+.hero-text h1 {
+  font-family: var(--secondary-font);
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph with medium size and secondary color */
+.hero-text p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+/* --- MENU --- */
+/* Section title with bold size, primary color, and centered */
+#projects h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Container for menu cards with flexbox, spacing, and wrapping */
+.menu-grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(275px,1fr));
+}
+
+/* Individual cards with a white background, rounded edges, shadow, and padding */
+.card {
+background-color: #c71d17;
+border-radius: var(--border-radius);
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+padding: 1.5rem;
+width: 300px;
+transition: transform var(--short-transition), box-shadow var(--short-transition);
+cursor: default; /* Default cursor to not indicate click */
+}
+
+/* Image inside the card with a fixed size and adjustment to avoid distortion, rounded edges, and a bottom margin */
+.card img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: var(--border-radius);
+margin-bottom: 1rem;
+display: block;
+}
+
+/* Hover and focus effects to highlight the card with scaling and shadow */
+.card:hover,
+.card:focus-within {
+transform: scale(1.05);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Title inside the card with a primary color and medium size */
+.card h3 {
+color: var(--primary-color);
+margin-bottom: 1rem;
+font-size: 1.5rem;
+}
+
+/* List inside the card with disc list style, secondary color, and proper line spacing */
+.card ul {
+list-style: disc inside;
+color: var(--secondary-color);
+font-size: 1rem;
+line-height: 1.4;
+}
+
+/* --- ABOUT US --- */
+/* Centered container with limited width, centered text, and secondary color */
+#about {
+max-width: 700px;
+margin: 0 auto;
+text-align: center;
+font-size: 1.1rem;
+color: var(--secondary-color);
+}
+
+#about h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* --- Contact me --- */
+/* Form container with limited width and centering */
+#contact {
+max-width: 500px;
+margin: 0 auto;
+}
+
+/* Booking section title with bold size, primary color, and centering */
+#contact h2 {
+font-size: 2rem;
+color: var(--primary-color);
+margin-bottom: 1.5rem;
+text-align: center;
+}
+
+/* Form with vertical flexible layout and field spacing */
+form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+/* Form labels with font weight and primary text color */
+form label {
+font-weight: 600;
+color: var(--text-color);
+}
+
+/* Input fields with padding, font size, soft border, rounded borders, and transition */
+form input {
+padding: 0.75rem 1rem;
+font-size: 1rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+transition: border-color var(--short-transition);
+font-family: inherit; /* Inherits the container's font */
+}
+
+/* Change the border color when the field is focused for better usability */
+form input:focus {
+border-color: var(--primary-color);
+outline: none;
+}
+
+/* Button with padding, bold font, primary background color, and rounded edges */
+.button {
+padding: 1rem;
+font-size: 1.1rem;
+font-weight: 700;
+background-color: var(--primary-color);
+color: white;
+border: none;
+border-radius: var(--border-radius);
+cursor: pointer;
+transition: background-color var(--short-transition);
+}
+
+/* Change background color on hover and focus for visual feedback */
+.button:hover,
+.button:focus {
+background-color: var(--primary-hover-color);
+outline: none;
+}
+
+/* ========== FOOTER ========== */
+/* Footer with dark background, centered white text, and reduced font size */
+footer {
+background-color: var(--footer-background-color);
+color: white;
+text-align: center;
+padding: 1rem 0;
+font-size: 0.9rem;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Settings for screens with a maximum width of 1024+px (desk) */
+@media (max-width: 1024px) {
+/* Initially hidden menu, with dropdown style and primary background */
+.menu {
+display: none;
+position: absolute;
+top: 70px;
+right: 2rem;
+background-color: var(--primary-color);
+flex-direction: column;
+gap: 1rem;
+padding: 1rem 1.5rem;
+border-radius: var(--border-radius);
+width: 180px;
+box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+z-index: 1000;
+}
+
+/* Show menu when hamburger menu checkbox is active */
+.menu-toggle:checked ~ .menu {
+display: flex;
+}
+
+/* Show hamburger button */
+.hamburger {
+display: flex;
+}
+
+/* Centered, column-based card menu */
+.menu-grid {
+flex-direction: column;
+align-items: center;
+}
+
+/* Wider cards for small screens */
+.card {
+width: 90vw;
+max-width: 275px;
+}
+
+/* Adjusting the main title size on hero */
+.hero-text h1 {
+font-size: 2.5rem;
+}
+}
+
+/* Settings for screens with a maximum width of 768px (tablets and mobile) */
+@media (max-width: 768px) {
+/* Initially hidden menu, with dropdown style and primary background */
+.menu {
+display: none;
+position: absolute;
+top: 70px;
+right: 2rem;
+background-color: var(--primary-color);
+flex-direction: column;
+gap: 1rem;
+padding: 1rem 1.5rem;
+border-radius: var(--border-radius);
+width: 180px;
+box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+z-index: 1000;
+}
+
+/* Show menu when hamburger menu checkbox is active */
+.menu-toggle:checked ~ .menu {
+display: flex;
+}
+
+/* Show hamburger button */
+.hamburger {
+display: flex;
+}
+
+/* Centered, column-based card menu */
+.menu-grid {
+flex-direction: column;
+align-items: center;
+}
+
+/* Wider cards for small screens */
+.card {
+width: 90vw;
+max-width: 350px;
+}
+
+/* Adjusting the main title size on hero */
+.hero-text h1 {
+font-size: 2.5rem;
+}
+}
+
+/* Specific settings for very small screens (up to 375px) */
+@media (max-width: 480px) {
+.hero-text h1 {
+font-size: 2rem;
+}
+
+.card {
+width: 95vw;
+}
+}

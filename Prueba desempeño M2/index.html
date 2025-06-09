@@ -1,0 +1,126 @@
+<!-- Basic structure of the HTML document -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Daniel Ariza</title>
+  <!-- Link to the external style sheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Header with responsive navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Daniel's Personal Portfolio</div>
+
+     <!-- Checkbox for hamburger menu on mobile -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Menu -->
+      <ul class="menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#contact">Contact me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- Main section with cover image -->
+    <section id="hero" class="section hero">
+      <img 
+        src="Assets/daniel.jpg" 
+        alt="Daniel's Photo"
+      />
+      <div class="hero-text">
+        <h1>Daniel's personal website</h1><br><br>
+        <p>My name is Daniel, I'm 24 years old, and I'm passionate about anime and video games. My nickname is Alex D. Walker</p><br>
+        <p>I'm currently training to become a coder at Riwi, to improve my skills, learn new things, and perhaps learn how to make a game of my own.</p>
+      </div>
+    </section>
+
+    <!-- Product Menu Section -->
+    <section id="projects" class="section">
+      <h2>My previous projects</h2>
+      <div class="menu-grid">
+        <!-- Projects 1: Python -->
+        <div class="card">
+          <img src="Assets/project1.png" alt="My best python program in github" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>Python</h3>
+          <ul>
+            <li>Inventory manager for a bookstore</li>
+            <li>Product validation system</li>
+            <li>Ratings and Statistics Challenge</li>
+          </ul>
+        </div>
+
+        <!-- Projects 2: HTML-->
+        <div class="card">
+          <img src="Assets/project2.png" alt="My best HTML project" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>HTML</h3>
+          <ul>
+            <li>Product card</li>
+            <li>Correction of HTML exercises</li>
+            <li>One Piece themed website</li>
+          </ul>
+        </div>
+
+        <!-- Projects 3: CSS -->
+        <div class="card">
+          <img src="Assets/project3.png" alt="Project where the use of CSS predominates" style="width:100%; border-radius: var(--radio-bordes); margin-bottom: 1rem;">
+          <h3>CSS</h3>
+          <ul>
+            <li>Responsive CSS page for Cafe De La Loma</li>
+            <li>Responsive Web Design Example</li>
+            <li>Product card with CSS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section about the coder -->
+    <section id="about" class="section about-section">
+      <h2>About me</h2><br>
+      <p>As I mentioned before, one of the things I'm most passionate about is watching anime. My favorite anime is One Piece, but in general, I love anime, for its culture, its stories, its animation, its character design, and its plot development.</p><br>
+      <p>About video games, I have known the world of gaming since I was 7-8 years old, my first game was Super Mario Bros. You could say that thanks to that game I got to know the gaming industry and its various genres and classic titles, such as Sonic, Zelda, Mortalkombat, among others.</p><br>
+      <p>I've also always been interested in the world of programming, primarily to learn how to create a game, but also because I've always found it interesting to be able to create applications or programs that can be useful in everyday life.</p>
+    </section>
+
+    <!-- Contact form -->
+    <section id="contact" class="section contact-section">
+      <h2>Contact me</h2>
+      <form action="https://formsubmit.co/..." method="POST">
+        <!--The action attribute specifies the URL to which the form data will be sent when submitted-->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="3" placeholder="Your name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Your email"/>
+
+        <label for="phone">Cellphone:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9\s\-\+\(\)]{7,15}" placeholder="Your Phone"/>
+
+        <label for="message">Your message:</label>
+        <textarea id="message" name="message" rows="5 required" placeholder="Here goes the message or the reason why you want to contact me."></textarea>
+
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Alex D Walker</p>
+  </footer>
+</body>
+</html>
